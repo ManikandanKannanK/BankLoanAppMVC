@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+@{ if (Session["Email"] != null)
+    {
+        <h2 style="text-align: center; color:rosybrown">
+            Welcome @Session["Email"].ToString()
+        </h2>
+        <br />
+
+        <h2 style="text-align: center; color:rosybrown">
+            Customer DashBoard
+        </h2>
+        <br />
+    }
+    else
+    {
+        <h2 style="text-align: center; color:rosybrown">
+            Welcome ....
+        </h2><br />
+        <h2 style="text-align: center; color:rosybrown">
+            Customer DashBoard
+        </h2><br /><br />
+
+    }
+}
+
+<table style="margin-left: auto; margin-right: auto;">
+    <tr>
+        <th>@Html.ActionLink("Login ", "Login")&nbsp;&nbsp;&nbsp;&nbsp;</th>
+        <th>@Html.ActionLink("Register", "Register")&nbsp;&nbsp;&nbsp;&nbsp;</th>
+        <th>@Html.ActionLink("Loan Apply", "LoanApply")&nbsp;&nbsp;&nbsp;&nbsp;</th>
+        <th>@Html.ActionLink("Loan Status", "LoanStatus")|&nbsp;&nbsp;&nbsp;&nbsp;</th>
+    </tr>
+</table>
+<hr />
